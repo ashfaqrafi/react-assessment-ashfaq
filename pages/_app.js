@@ -1,4 +1,3 @@
-import Navbar from "../components/navbar";
 import "../styles/globals.css";
 import { Inter } from '@next/font/google'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -10,7 +9,6 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
     <main className={inter.className}>
-      {/* <Navbar /> */}
       <Component {...pageProps} />
       </main>
     </>

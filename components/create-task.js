@@ -2,7 +2,7 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import CustomModal from "../components/modal";
-import { saveTasksToLocalStorage, getTasksFromLocalStorage } from "../utility/utils.js"
+import { saveTasksToLocalStorage } from "../utility/utils.js"
 
 const CreateTaskSchema = Yup.object().shape({
   title: Yup.string().min(3, 'Title too short!').max(100, 'Title too long!').required('Required'),
@@ -23,9 +23,21 @@ const CreateTaskSchema = Yup.object().shape({
 
 
 
-function CreateTask(props) {
+function CreateTask({ mode = "create", initialData = {}, onUpdate }) {
 
   const [storedValue, setStoredValue] = React.useState(null);
+
+      const defaultValues = {
+      title: '',
+      description: '',
+      priority: '',
+      startDate: '',
+      endDate: '',
+      status: '',
+      assignedPerson: '',
+      attachments: [],
+      subTasks: [],
+    };
 
   React.useEffect(() => {
     const storedTasks = localStorage.getItem('tasks');
@@ -34,29 +46,23 @@ function CreateTask(props) {
 
   return (
     <>
-      <CustomModal buttonName={"Create Task"} title={"Create a new task"}>
+      <CustomModal buttonName={"Create Task"} title={mode === "create" ? "Create a new task" : "Edit task"}>
             <Formik
-                initialValues={{
-                    title: '',
-                    description: '',
-                    priority: '',
-                    startDate: '',
-                    endDate: '',
-                    status: '',
-                    assignedPerson: '',
-                    attachments: [],
-                    subTasks: [],
-                }}
+                initialValues={mode === "edit" ? initialData : defaultValues}
                 validationSchema={CreateTaskSchema}
-                // onSubmit={(values) => {
-                //     console.log(values);
-                // }}
                 onSubmit={(values, { resetForm }) => {
                 // Get tasks from localStorage
                     const currentTasks = storedValue;
                 
                     // Push the new task
-                    currentTasks.push(values);
+                    if (mode === "edit") {
+                const taskIndex = currentTasks.findIndex(task => task.id === initialData.id);
+                if (taskIndex !== -1) {
+                  currentTasks[taskIndex] = values;
+                }
+              } else {
+                currentTasks.push(values);
+              }
                 
                     // Save tasks back to localStorage
                     saveTasksToLocalStorage(currentTasks);
@@ -65,6 +71,12 @@ function CreateTask(props) {
                     resetForm();
                 
                     console.log('Task saved successfully!');
+
+                    // If in edit mode and onUpdate is provided, call it.
+              if (mode === "edit" && onUpdate) {
+                onUpdate();
+              }
+               
                 }}
             >
             {({ values, setFieldValue }) => (
@@ -157,8 +169,10 @@ function CreateTask(props) {
                     </div>
 
                     <div className='flex justify-end'>
-                        <button className='bg-sky-500 p-2 rounded text-white mt-3' type="submit">Create Task</button>
-                    </div>
+              <button className='bg-sky-500 p-2 rounded text-white mt-3' type="submit">
+                 {mode === "create" ? "Create Task" : "Update Task"}
+              </button>
+             </div>
                 </Form>
             )}
         </Formik>
@@ -168,31 +182,3 @@ function CreateTask(props) {
 }
 
 export default CreateTask;
-
-
-// const saveTasksToLocalStorage = (tasks) => {
-//     localStorage.setItem('tasks', JSON.stringify(tasks));
-//   }
-  
-//   const getTasksFromLocalStorage = () => {
-//     const storedTasks = localStorage.getItem('tasks');
-//     return storedTasks ? JSON.parse(storedTasks) : [];
-//   }
-
-//   onSubmit={(values, { resetForm }) => {
-//     // Get tasks from localStorage
-//     const currentTasks = getTasksFromLocalStorage();
-  
-//     // Push the new task
-//     currentTasks.push(values);
-  
-//     // Save tasks back to localStorage
-//     saveTasksToLocalStorage(currentTasks);
-  
-//     // Reset form for the next input
-//     resetForm();
-  
-//     console.log('Task saved successfully!');
-//   }}
-  
-
