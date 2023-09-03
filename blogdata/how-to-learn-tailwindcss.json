@@ -1,0 +1,7 @@
+{
+    "Title":"How to learn TailwindCSS",
+    "Content": "Tailwind CSS is an open source CSS framework. The main feature of this library is that, unlike other CSS frameworks like Bootstrap, it does not provide a series of predefined classes for elements such as buttons or tables. Instead, it creates a list of CSS classes that can be used to style each element by mixing and matching. For example, in other traditional systems, there would be a class message-warning that would apply a yellow background color and bold text. To achieve this result in Tailwind, one would have to apply a set of classes created by the library: bg-yellow-200 and font-bold. As of December 2022, Tailwind CSS has over 62,000 stars on GitHub.",
+    "Author": "Jhon Ahmed",
+    "metadesc": "Learn Tailwind CSS in few minutes. To achieve this result in Tailwind, one would have to apply a set of classes created by the library: bg-yellow-200 and font-bold. As of December 2022, Tailwind CSS has over 62,000 stars on GitHub.",
+    "slug": "how-to-learn-TailwindCSS"
+}
