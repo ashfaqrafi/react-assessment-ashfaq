@@ -26,8 +26,7 @@ export default function Home() {
           &lt;Hunting Coders&gt;
         </div>
         <div className="mt-[40px] w-11/12 mx-auto">
-          {" "}
-          <div className="capitalize primary-heading flex self-start ">Recent blogs</div>{" "}
+          
         </div>
       </main>
 
