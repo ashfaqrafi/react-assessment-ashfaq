@@ -15,11 +15,6 @@ export default function Home() {
 
       <main className="main-body inter ">
         <div className="main-image">
-          <img
-            className="w-[200px] h-[200px] rounded-full"
-            src="./homeimg.jfif"
-            alt="hunting cooders"
-          />
         </div>
         <div className="mt-[20px] section-heading italic roboto">
           {" "}
