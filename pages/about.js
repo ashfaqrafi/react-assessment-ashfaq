@@ -34,17 +34,17 @@ const About = () => {
           <div className="section-heading mt-[20px]">
             We offer following services :
           </div>
-          <div className="pl-[20px] py-[10px]">
-            <ul className="primary-paragraph space-y-[5px] list-disc font-semibold">
-              <li>Service 1</li>
-              <li>Service 2</li>
-              <li>Service 3</li>
-              <li>Service 4</li>
-              <li>Service 5</li>
-              <li>Service 6</li>
-              <li>Service 7</li>
-            </ul>
-          </div>
+            <div className="pl-[20px] py-[10px]">
+              <ul className="primary-paragraph space-y-[5px] list-disc font-semibold">
+                <li>Service 1</li>
+                <li>Service 2</li>
+                <li>Service 3</li>
+                <li>Service 4</li>
+                <li>Service 5</li>
+                <li>Service 6</li>
+                <li>Service 7</li>
+              </ul>
+            </div>
         </div>
       </div>
       <div className=" space-y-[10px] card">

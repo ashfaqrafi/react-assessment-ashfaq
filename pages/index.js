@@ -27,9 +27,7 @@ export default function Home() {
         </div>
         <div className="mt-[40px] w-11/12 mx-auto">
           {" "}
-          <div className="capitalize primary-heading flex self-start ">
-            Recent blogs
-          </div>{" "}
+          <div className="capitalize primary-heading flex self-start ">Recent blogs</div>{" "}
         </div>
         <div className="blog space-y-[20px] mt-[20px]">
           <div className="blogItem card">

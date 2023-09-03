@@ -18,7 +18,7 @@ const Blog = (props) => {
     <div className="main-body">
       <InfiniteScroll
         className="infine-scroller"
-        dataLength={blogs.length}
+        dataLength={blogs.length} 
         next={fetchData}
         hasMore={props.allCount !== blogs.length}
         loader={<h4>Loading...</h4>}
@@ -64,7 +64,7 @@ export async function getStaticProps(context) {
     allBlogs.push(JSON.parse(myfile));
   }
   return {
-    props: { allBlogs, allCount },
+    props: { allBlogs, allCount }, 
   };
 }
 

@@ -43,9 +43,7 @@ const Contact = () => {
     <div className="main-body roboto">
       <div className="w-full sm:w-10/12 md:8/12 lg:w-7/12 mx-auto">
         <div className="card">
-          <div className="secondary-heading text-center pt-[20px]">
-            Contact US
-          </div>
+          <div className="secondary-heading text-center pt-[20px]">Contact US</div>
           <div>
             <form
               onSubmit={handleSubmit}
