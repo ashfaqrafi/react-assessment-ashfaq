@@ -29,38 +29,6 @@ export default function Home() {
           {" "}
           <div className="capitalize primary-heading flex self-start ">Recent blogs</div>{" "}
         </div>
-        <div className="blog space-y-[20px] mt-[20px]">
-          <div className="blogItem card">
-            <div className="section-heading">Blog post 1st Oct 2007</div>
-            <div className="primary-pargraph text-justify">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur,
-              inventore labore libero culpa adipisci error, minus aspernatur
-              expedita cupiditate ut et corrupti. Maxime qui beatae amet
-              pariatur ab asperiores repellat suscipit aperiam, culpa quam.
-            </div>
-            <button className="primary-button">read more</button>
-          </div>
-          <div className="blogItem card">
-            <div className="section-heading">Blog post 12th Nov 2012</div>
-            <div className="primary-pargraph text-justify">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem
-              quod esse officiis amet, eveniet veniam beatae accusamus deleniti
-              ea, aliquam tempora nisi, eos voluptas consectetur quisquam alias
-              excepturi eius at.
-            </div>
-            <button className="primary-button">read more</button>
-          </div>
-          <div className="blogItem card">
-            <div className="section-heading">Blog post 24th Jul 2022</div>
-            <div className="primary-pargraph text-justify">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Aspernatur fuga, dolorem nulla consequatur, beatae officia quia
-              eum aut eligendi, fugiat illum quidem sunt tempore consectetur
-              error! Soluta molestias delectus ducimus veniam, nam ratione.
-            </div>
-            <button className="primary-button">read more</button>
-          </div>
-        </div>
       </main>
 
       <footer className={styles.footer}></footer>
